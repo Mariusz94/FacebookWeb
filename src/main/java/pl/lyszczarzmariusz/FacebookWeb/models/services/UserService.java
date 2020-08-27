@@ -5,6 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import pl.lyszczarzmariusz.FacebookWeb.controllers.MainController;
 import pl.lyszczarzmariusz.FacebookWeb.models.UserModel;
 
@@ -26,5 +29,14 @@ public class UserService {
         this.userModel = userModel;
         logger.info("Logged user");
         isLogged = true;
+    }
+
+    public void showErrors(BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()){
+            for (FieldError fieldError : bindingResult.getFieldErrors()) {
+                model.addAttribute(fieldError.getField() + "FieldError", fieldError.getDefaultMessage());
+                logger.info("Get error in \"" + fieldError.getField() + "\" " + fieldError.getDefaultMessage());
+            }
+        }
     }
 }

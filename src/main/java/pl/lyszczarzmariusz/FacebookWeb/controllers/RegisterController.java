@@ -30,14 +30,14 @@ public class RegisterController {
     Logger logger;
 
     @Autowired
-    public RegisterController(UserRepository userRepository,UserService userService) {
+    public RegisterController(UserRepository userRepository, UserService userService) {
         this.userRepository = userRepository;
         this.userService = userService;
         logger = LoggerFactory.getLogger(RegisterController.class);
     }
 
     @GetMapping(path = "/register")
-    public String registerPage(Model model){
+    public String registerPage(Model model) {
         logger.info("Sending empty RegisterForm");
         model.addAttribute("registerForm", new RegisterForm());
         logger.info("Display template \"registerPage\" in browser");
@@ -46,29 +46,40 @@ public class RegisterController {
 
     //todo logger
     @PostMapping("/register")
-    public String registerPageAnswer(@Valid @ModelAttribute("passengerModel") RegisterForm registerForm, Model model, BindingResult bindingResult) {
+    public String registerPageAnswer(@Valid @ModelAttribute("registerForm") RegisterForm registerForm, BindingResult bindingResult, Model model) {
+        userService.showErrors(bindingResult, model);
+
+        logger.info("Search user in database");
         Optional<UserModel> userModel = userRepository.findByEmail(registerForm.getEmail());
 
         if (userModel.isPresent()) {
             logger.info("Attempting to use an email address found in the database");
-            return "redirect:/register";
-        }
-        if (bindingResult.hasErrors()){
-            //todo if have errors
-        }
-        if (!registerForm.getPassword().equals(registerForm.getRepeatedPassword())){
-            //todo if password do not match
-            logger.info("Clear password");
-            registerForm.setPassword("");
-            registerForm.setRepeatedPassword("");
-            logger.info("Sending empty RegisterForm");
+
+            model.addAttribute("emailFieldBusyError", "This email is used by another user");
+            logger.info("Sending RegisterForm");
             model.addAttribute("registerForm", registerForm);
             logger.info("Display template \"registerPage\" in browser");
             return "registerPage";
         }
-        logger.info("Try save user to database");
-        userRepository.save(UserModel.createUser(registerForm));
-        logger.info("Saved user to database");
-        return "redirect:/";
+
+        if (!bindingResult.hasErrors() && registerForm.getPassword().equals(registerForm.getRepeatedPassword())) {
+            logger.info("Try save user to database");
+            userRepository.save(UserModel.createUser(registerForm));
+            logger.info("Saved user to database");
+            userService.setUser(UserModel.createUser(registerForm));
+            logger.info("Redirect to \"/\"");
+            return "redirect:/";
+        }
+
+        logger.info("Passwords are different");
+        model.addAttribute("repeatedPasswordFieldSameError", "Passwords are different");
+        logger.info("Clear password");
+        registerForm.setPassword("");
+        registerForm.setRepeatedPassword("");
+        logger.info("Sending RegisterForm");
+        model.addAttribute("registerForm", registerForm);
+        logger.info("Display template \"registerPage\" in browser");
+        return "registerPage";
     }
+
 }

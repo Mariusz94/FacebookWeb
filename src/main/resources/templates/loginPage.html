@@ -6,8 +6,11 @@
 </head>
 <body>
 <form th:action="@{/login}" method="post" th:object="${loginForm}">
-    <input type="text" th:field="*{email}" placeholder="Email" required/><br>
-    <input type="text" th:field="*{password}" placeholder="Password" required/><br>
+    <input type="text" th:field="*{email}" placeholder="Email" required/>
+    <div th:if="${emailFieldError != null} " style="color: red" th:text="${emailFieldError}"></div><br>
+    <input type="text" th:field="*{password}" placeholder="Password" required/>
+    <div th:if="${passwordFieldError != null} " style="color: red" th:text="${passwordFieldError}"></div><br>
+    <div th:if="${errorLogin != null} " style="color: red" th:text="${errorLogin}"></div><br>
     <button type="submit">Login</button>
 </form>
 <a href="/register">Do you haven't account yet?? Register</a>

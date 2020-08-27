@@ -29,34 +29,41 @@ public class LoginController {
     Logger logger;
 
     @Autowired
-    public LoginController(UserRepository userRepository,UserService userService) {
+    public LoginController(UserRepository userRepository, UserService userService) {
         this.userRepository = userRepository;
         this.userService = userService;
         logger = LoggerFactory.getLogger(LoginController.class);
     }
 
     @GetMapping(path = "/login")
-    public String loginPage(Model model){
+    public String loginPage(Model model) {
         logger.info("Sending empty LoginForm");
         model.addAttribute("loginForm", new LoginForm());
         logger.info("Display template \"loginPage\" in browser");
         return "loginPage";
     }
 
-    //todo logger
     @PostMapping("/login")
-    public  String loginPageAnswer(@Valid @ModelAttribute("passengerModel") LoginForm loginForm, BindingResult bindingResult) {
+    public String loginPageAnswer(@Valid @ModelAttribute("loginForm") LoginForm loginForm, BindingResult bindingResult, Model model) {
+        userService.showErrors(bindingResult, model);
+
+        logger.info("Search user in database");
         Optional<UserModel> userModel = userRepository.findByEmail(loginForm.getEmail());
-        if (userModel.isEmpty()) {
-            logger.info("Redirect to \"/login\"");
-            return "redirect:/login";
-        }
-        if (userModel.get().getPassword().equals(loginForm.getPassword())){
+
+        if (userModel.isPresent() && userModel.get().getPassword().equals(loginForm.getPassword())) {
             userService.setUser(userModel.get());
             logger.info("Redirect to \"/\"");
             return "redirect:/";
         }
-        logger.info("Redirect to \"/login\"");
-        return "redirect:/login";
+
+        logger.info("Wrong data");
+        model.addAttribute("errorLogin", "Incorrect data");
+        logger.info("Clear password");
+        loginForm.setPassword("");
+        logger.info("Sending LoginForm");
+        model.addAttribute("loginForm", loginForm);
+        logger.info("Display template \"loginPage\" in browser");
+        return "loginPage";
     }
+
 }
