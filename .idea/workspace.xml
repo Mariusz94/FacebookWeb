@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aaad0f5-e8ca-4399-b5c1-9225def5c374" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="8aaad0f5-e8ca-4399-b5c1-9225def5c374" name="Default Changelist" comment="Add Validation">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/lyszczarzmariusz/FacebookWeb/models/UserInfoModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lyszczarzmariusz/FacebookWeb/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lyszczarzmariusz/FacebookWeb/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lyszczarzmariusz/FacebookWeb/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lyszczarzmariusz/FacebookWeb/controllers/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lyszczarzmariusz/FacebookWeb/models/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lyszczarzmariusz/FacebookWeb/models/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/loginPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registerPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registerPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/lyszczarzmariusz/FacebookWeb/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/lyszczarzmariusz/FacebookWeb/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/lyszczarzmariusz/FacebookWeb/controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/lyszczarzmariusz/FacebookWeb/controllers/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/lyszczarzmariusz/FacebookWeb/models/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/lyszczarzmariusz/FacebookWeb/models/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/loginPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/registerPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/registerPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +27,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\Unit\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="vmOptionsForImporter" value="-Xmx768m" />
@@ -54,6 +52,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
@@ -70,6 +69,17 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FacebookWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="FacebookWeb" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.lyszczarzmariusz.FacebookWeb.FacebookWebApplication" />
@@ -78,6 +88,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -92,7 +103,9 @@
       <workItem from="1598435711187" duration="1458000" />
       <workItem from="1598443564292" duration="2321000" />
       <workItem from="1598448010192" duration="21888000" />
-      <workItem from="1598499554003" duration="6782000" />
+      <workItem from="1598499554003" duration="6900000" />
+      <workItem from="1598558259589" duration="166000" />
+      <workItem from="1598558779768" duration="1045000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598472098993</created>
@@ -101,15 +114,23 @@
       <option name="project" value="LOCAL" />
       <updated>1598472098993</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Validation">
+      <created>1598506432928</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598506432928</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Add Validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Validation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1325" y="411" width="394" height="217" key="#Assign_Data_Sources" timestamp="1598448775430">
@@ -128,14 +149,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1231" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1598466892371" />
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598435894289">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598558396920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598435894289" />
-    <state x="865" y="100" key="CommitChangelistDialog2" timestamp="1598472096995">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598558396920" />
+    <state x="865" y="100" key="CommitChangelistDialog2" timestamp="1598559089257">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="865" y="100" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1598472096995" />
+    <state x="865" y="100" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1598559089257" />
     <state x="1206" y="275" key="FileChooserDialogImpl" timestamp="1598502008298">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -148,38 +169,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1047" y="237" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598471712968" />
-    <state width="1120" height="277" key="GridCell.Tab.0.bottom" timestamp="1598506298058">
+    <state width="1120" height="277" key="GridCell.Tab.0.bottom" timestamp="1598506472344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598506298058" />
-    <state width="1120" height="277" key="GridCell.Tab.0.center" timestamp="1598506298057">
+    <state width="1120" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598506472344" />
+    <state width="1120" height="277" key="GridCell.Tab.0.center" timestamp="1598506472343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598506298057" />
-    <state width="1120" height="277" key="GridCell.Tab.0.left" timestamp="1598506298057">
+    <state width="1120" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598506472343" />
+    <state width="1120" height="277" key="GridCell.Tab.0.left" timestamp="1598506472343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598506298057" />
-    <state width="1120" height="277" key="GridCell.Tab.0.right" timestamp="1598506298058">
+    <state width="1120" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598506472343" />
+    <state width="1120" height="277" key="GridCell.Tab.0.right" timestamp="1598506472343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598506298058" />
-    <state width="1120" height="277" key="GridCell.Tab.1.bottom" timestamp="1598506298058">
+    <state width="1120" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598506472343" />
+    <state width="1120" height="277" key="GridCell.Tab.1.bottom" timestamp="1598506472344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="277" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598506298058" />
-    <state width="1120" height="277" key="GridCell.Tab.1.center" timestamp="1598506298058">
+    <state width="1120" height="277" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598506472344" />
+    <state width="1120" height="277" key="GridCell.Tab.1.center" timestamp="1598506472344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="277" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598506298058" />
-    <state width="1120" height="277" key="GridCell.Tab.1.left" timestamp="1598506298058">
+    <state width="1120" height="277" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598506472344" />
+    <state width="1120" height="277" key="GridCell.Tab.1.left" timestamp="1598506472344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="277" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598506298058" />
-    <state width="1120" height="277" key="GridCell.Tab.1.right" timestamp="1598506298058">
+    <state width="1120" height="277" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598506472344" />
+    <state width="1120" height="277" key="GridCell.Tab.1.right" timestamp="1598506472344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="277" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598506298058" />
+    <state width="1120" height="277" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598506472344" />
     <state width="1112" height="344" key="GridCell.Tab.2.bottom" timestamp="1598472206203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -208,10 +229,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="316" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598448351005" />
-    <state x="922" y="265" key="Vcs.Push.Dialog.v2" timestamp="1598472119225">
+    <state x="922" y="265" key="Vcs.Push.Dialog.v2" timestamp="1598506436604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="922" y="265" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598472119225" />
+    <state x="922" y="265" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598506436604" />
     <state x="1060" y="282" key="extract.method.dialog" timestamp="1598504074390">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

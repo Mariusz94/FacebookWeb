@@ -6,11 +6,17 @@
 </head>
 <body>
 <form th:action="@{/register}" method="post" th:object="${registerForm}">
-    <input type="text" th:field="*{firstName}" placeholder="First name" required/><br>
-    <input type="text" th:field="*{lastName}" placeholder="Last name" required/><br>
-    <input type="text" th:field="*{password}" placeholder="Password" required/><br>
-    <input type="text" th:field="*{repeatedPassword}" placeholder="Repeated password" required/><br>
-    <input type="text" th:field="*{email}" placeholder="Email" required/><br>
+    <input type="text" th:field="*{firstName}" placeholder="First name" required/>
+    <div th:if="${firstNameFieldError != null} " style="color: red" th:text="${firstNameFieldError}"></div><br>
+    <input type="text" th:field="*{lastName}" placeholder="Last name" required/>
+    <div th:if="${lastNameFieldError != null} " style="color: red" th:text="${lastNameFieldError}"></div><br>
+    <input type="text" th:field="*{password}" placeholder="Password" required/>
+    <div th:if="${passwordFieldError != null} " style="color: red" th:text="${passwordFieldError}"></div><br>
+    <input type="text" th:field="*{repeatedPassword}" placeholder="Repeated password" required/>
+    <div th:if="${repeatedPasswordFieldSameError != null} " style="color: red" th:text="${repeatedPasswordFieldSameError}"></div><br>
+    <input type="text" th:field="*{email}" placeholder="Email" required/>
+    <div th:if="${emailFieldBusyError != null} " style="color: red" th:text="${emailFieldBusyError}"></div><br>
+    <div th:if="${emailFieldError != null}" style="color: red" th:text="${emailFieldError}"></div><br th:if="${emailFieldError != null}">
     <input type="text" th:field="*{phoneNumber}" placeholder="Phone number" required/><br>
     <button type="submit">Register</button>
 </form>
